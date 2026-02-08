@@ -1,0 +1,140 @@
+02.08 10:37 AM
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Ayesha ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 25px;
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+  position: relative;
+  z-index: 2;
+}
+h1 {
+  color: #ff4d6d;
+}
+p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  margin: 10px;
+}
+#yes {
+  background: #ff4d6d;
+  color: white;
+}
+#no {
+  background: #ddd;
+  position: absolute;
+}
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 6s linear infinite;
+}
+@keyframes float {
+  0% { transform: translateY(100vh); opacity: 1; }
+  100% { transform: translateY(-10vh); opacity: 0; }
+}
+#success {
+  display: none;
+  font-size: 22px;
+  color: #ff4d6d;
+  font-weight: bold;
+  animation: pop 1s ease-in-out infinite alternate;
+}
+@keyframes pop {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+</style>
+</head>
+<body>
+<!-- Music -->
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3">
+</audio>
+<div class="card" id="card">
+  <h1>Ayesha Rehman ❤️</h1>
+  <p id="text">
+    Shayad yeh thoda alag tareeka hai kehne ka…  
+    par dil se likha hai 🥺❤️  
+    <br><br>
+    Ayesha, tum meri zindagi ka woh hissa ho  
+    jiske bina sab adhoora lagta hai.  
+    Tumhari smile meri strength hai  
+    aur tumhara saath meri peace ✨  
+    <br><br>
+    Aaj Propose Day pe  
+    dil se ek sawaal hai…
+    <br><br>
+    <b>Will you be mine, hamesha? </b>
+    <br><br>
+    <i>— Syed Bokhari</i>
+  </p>
+  <div id="success">Ayesha  Syed — Forever ✨</div>
+  <button id="yes" onclick="yesClicked()">YES </button>
+  <button id="no" onmouseover="moveNo()">NO </button>
+</div>
+<!-- Confetti Library -->
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+function yesClicked() {
+  document.getElementById("text").style.display = "none";
+  document.getElementById("yes").style.display = "none";
+  document.getElementById("no").style.display = "none";
+  document.getElementById("success").style.display = "block";
+  // Confetti blast
+  confetti({
+    particleCount: 200,
+    spread: 80,
+    origin: { y: 0.6 }
+  });
+  // WhatsApp redirect after 2 seconds
+  setTimeout(() => {
+    window.location.href =
+      "https://wa.me/?text=YES%20Syed%20❤️%20Main%20Ayesha%20Rehman%20hamesha%20tumhare%20saath%20rahungi%20🥰";
+  }, 2000);
+}
+function moveNo() {
+  const no = document.getElementById("no");
+  no.style.top = Math.random() * 80 + "%";
+  no.style.left = Math.random() * 80 + "%";
+}
+// Floating hearts
+setInterval(() => {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = Math.random() * 20 + 15 + "px";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 6000);
+}, 300);
+</script>
+</body>
+</html>
+
